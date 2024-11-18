@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Overview
+
+This project is built using Next.js and utilizes internationalization (i18n) to support multiple languages. We are using the `next-intl` library to manage translations and provide a seamless experience for users across different locales.
+
+## Key Features
+
+- **Dynamic Routing**: The application supports dynamic routing based on the user's selected language.
+- **Translation Management**: We use the `useTranslations` hook from `next-intl` to fetch and display localized content.
+- **Locale Switching**: Users can switch between languages, and the content updates accordingly.
 
 ## Getting Started
 
-First, run the development server:
+1. **Install Dependencies**: Make sure to install the necessary packages for internationalization.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```bash
+   npm install next-intl
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Setup Translations**: Create translation files for each supported language in the `locales` directory.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Usage**: Use the `useTranslations` hook in your components to access translated strings.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Example
 
-## Learn More
+Here’s a simple example of how to use translations in a component:
 
-To learn more about Next.js, take a look at the following resources:
+# Start Generation Here
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+// This example demonstrates how to use the `useTranslations` hook from the `next-intl` library
+// to fetch and display localized content in a Next.js component.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+import { useTranslations } from "next-intl";
 
-## Deploy on Vercel
+export default function ExampleComponent() {
+const t = useTranslations("example");
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+return (
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<div>
+<h2>{t("exampleTitle")}</h2>
+<p>{t("exampleContent")}</p>
+</div>
+);
+}

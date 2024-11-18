@@ -23,3 +23,22 @@ This project is built using Next.js and utilizes internationalization (i18n) to 
 ## Example
 
 Here’s a simple example of how to use translations in a component:
+
+# Start Generation Here
+
+// This example demonstrates how to use the `useTranslations` hook from the `next-intl` library
+// to fetch and display localized content in a Next.js component.
+
+import { useTranslations } from "next-intl";
+
+export default function ExampleComponent() {
+const t = useTranslations("example");
+
+return (
+
+<div>
+<h2>{t("exampleTitle")}</h2>
+<p>{t("exampleContent")}</p>
+</div>
+);
+}
